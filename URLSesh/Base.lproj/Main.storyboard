@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,87 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="URLSesh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-XK-dD8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chuck Norris fact will appear here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbr-o0-cHU">
+                                        <rect key="frame" x="10" y="30" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOe-2e-sjp">
+                                        <rect key="frame" x="127.5" y="240" width="159" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Get Chuck Norris Facts"/>
+                                        <connections>
+                                            <action selector="chuckButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cd9-Tw-UIQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="8wl-p6-HiJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="vbr-o0-cHU" secondAttribute="trailing" constant="10" id="9KP-ul-1r3"/>
+                                    <constraint firstItem="vbr-o0-cHU" firstAttribute="leading" secondItem="xQX-XK-dD8" secondAttribute="leading" constant="10" id="D2b-NQ-cCZ"/>
+                                    <constraint firstItem="vbr-o0-cHU" firstAttribute="centerX" secondItem="xQX-XK-dD8" secondAttribute="centerX" id="JlG-Sb-ugN"/>
+                                    <constraint firstItem="pOe-2e-sjp" firstAttribute="centerX" secondItem="xQX-XK-dD8" secondAttribute="centerX" id="UP3-yF-Xrd"/>
+                                    <constraint firstAttribute="bottom" secondItem="pOe-2e-sjp" secondAttribute="bottom" constant="30" id="iO3-NP-VD5"/>
+                                    <constraint firstItem="vbr-o0-cHU" firstAttribute="top" secondItem="xQX-XK-dD8" secondAttribute="top" constant="30" id="yTZ-LD-Dm6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z6-yl-bid">
+                                <rect key="frame" x="0.0" y="344" width="414" height="518"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tLb-L7-K6G">
+                                        <rect key="frame" x="10" y="30" width="394" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="bnn-Qn-393"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-yo-3GQ">
+                                        <rect key="frame" x="142" y="130" width="130" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Submit to Pastebin"/>
+                                        <connections>
+                                            <action selector="pastebinButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RLJ-JC-E4J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="t0B-yo-3GQ" firstAttribute="centerX" secondItem="3Z6-yl-bid" secondAttribute="centerX" id="Knn-7B-LQj"/>
+                                    <constraint firstAttribute="trailing" secondItem="tLb-L7-K6G" secondAttribute="trailing" constant="10" id="Tcc-6F-575"/>
+                                    <constraint firstItem="tLb-L7-K6G" firstAttribute="leading" secondItem="3Z6-yl-bid" secondAttribute="leading" constant="10" id="XUk-Gv-WBI"/>
+                                    <constraint firstItem="t0B-yo-3GQ" firstAttribute="top" secondItem="tLb-L7-K6G" secondAttribute="bottom" constant="40" id="iHj-Ua-urW"/>
+                                    <constraint firstItem="tLb-L7-K6G" firstAttribute="top" secondItem="3Z6-yl-bid" secondAttribute="top" constant="30" id="tVp-Yr-VDO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Z6-yl-bid" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1mF-VN-ysu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xQX-XK-dD8" secondAttribute="trailing" id="6H4-PN-RF5"/>
+                            <constraint firstItem="xQX-XK-dD8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HWR-Gn-AV3"/>
+                            <constraint firstItem="xQX-XK-dD8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RHR-nB-hbb"/>
+                            <constraint firstItem="3Z6-yl-bid" firstAttribute="top" secondItem="xQX-XK-dD8" secondAttribute="bottom" id="lEI-XE-Kg7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Z6-yl-bid" secondAttribute="trailing" id="meW-HD-JSF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Z6-yl-bid" secondAttribute="bottom" id="nFA-mH-gZq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="chuckLabel" destination="vbr-o0-cHU" id="hG2-aw-6lC"/>
+                        <outlet property="pastebinTextField" destination="tLb-L7-K6G" id="VLQ-v1-St1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
