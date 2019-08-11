@@ -45,6 +45,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pastebinButtonPressed(_ sender: Any) {
+        let params = [
+            "api_dev_key" : "5e8fc5f765ba88c3693d356d9c24cc16",
+            "api_option" : "paste",
+            "api_paste_code" : pastebinTextField.text ?? "No text input"
+        ]
+        
+        guard let url = URL(string: "https://pastebin.com/api/api_post.php") else {
+            fatalError("Pastebin URL not available")
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else {
+            fatalError("JSON serialization with httpBody in Pastebin did not work.")
+        }
+        request.httpBody = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with: request)
+        
     }
 
 }
