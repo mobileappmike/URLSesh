@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     
     @IBAction func pastebinButtonPressed(_ sender: Any) {
         let params = [
-            "api_dev_key" : "5e8fc5f765ba88c3693d356d9c24cc16",
+            "api_dev_key" : "YOUR_API_KEY_HERE",
             "api_option" : "paste",
             "api_paste_code" : pastebinTextField.text ?? "No text input"
         ]
@@ -62,7 +62,13 @@ class ViewController: UIViewController {
         request.httpBody = httpBody
         
         let session = URLSession.shared
-        session.dataTask(with: request)
+        session.dataTask(with: request) { (data, response, error) in
+            if let data = data {
+                if let dataString = String(data: data, encoding: String.Encoding.utf8) {
+                    print(dataString)
+                }
+            }
+        }.resume()
         
     }
 
