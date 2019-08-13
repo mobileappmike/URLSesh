@@ -32,9 +32,23 @@ class ViewController: UIViewController {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     if let dict = json as? [String : Any] {
+                        //TO EXTRACT A SINGLE VALUE
                         if let value = dict["value"] as? String {
                             print(value)
                         }
+                        
+                        //TO EXTRACT MULTIPLE VALUES
+//                        for (key, value) in dict {
+//                            if key == "value" {
+//                                print(value)
+//                            }
+//                        }
+                        
+                        //TO EXTRACT NESTED VALUES
+//                        if let nestedData = dict["nestedJSON"] as? [String: Any] {
+//                            let value = nestedData["nestedValue"]
+//                            print(value)
+//                        }
                     }
                     print(json)
                 } catch {
@@ -51,8 +65,9 @@ class ViewController: UIViewController {
 //            "api_option" : "paste",
 //            "api_paste_code" : pastebinTextField.text ?? "No text input"
 //        ]
-        let params = "api_dev_key=YOUR_API_KEY_HERE&api_option=paste&api_paste_code=\(pastebinTextField.text ?? "No text input")"
         
+        //FOR STRING STYLE INPUTS
+        let params = "api_dev_key=YOUR_API_KEY_HERE&api_option=paste&api_paste_code=\(pastebinTextField.text ?? "No text input")"
         
         guard let url = URL(string: "https://pastebin.com/api/api_post.php") else {
             fatalError("Pastebin URL not available")
