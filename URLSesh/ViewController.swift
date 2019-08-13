@@ -24,17 +24,15 @@ class ViewController: UIViewController {
         }
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
-            
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     if let dict = json as? [String : Any] {
                         //TO EXTRACT A SINGLE VALUE
                         if let value = dict["value"] as? String {
-                            print(value)
+                            DispatchQueue.main.async {
+                                self.chuckLabel.text = value
+                            }
                         }
                         
                         //TO EXTRACT MULTIPLE VALUES
@@ -50,7 +48,6 @@ class ViewController: UIViewController {
 //                            print(value)
 //                        }
                     }
-                    print(json)
                 } catch {
                     print(error)
                 }
